@@ -3,7 +3,7 @@ $login = $_POST['login'] ?? '';
 $password = $_POST['motDePasse'] ?? '';
 
 $correctLogin = 'admin';
-$correctPassword = 'pa12';
+$correctPassword = 'passer1234';
 
 if ($login === $correctLogin && $password === $correctPassword) {
     echo "Connexion réussie";

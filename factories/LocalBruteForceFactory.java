@@ -18,7 +18,7 @@ public class LocalBruteForceFactory implements CrackerFactory{
     }
 
     public Target createTarget(){
-        return new LocalTarget(login, "pa12");
+        return new LocalTarget(login, "passer1234");
     }
      
 }
