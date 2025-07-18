@@ -55,5 +55,7 @@ Dictionnaire  ---   en ligne   ---   OnlineDictionnaryFactory ---  Envoie des re
         ---Pistes
 
 --- le multithreading pour tester plusieur mot de passe a la fois et accelerer le processus
+
 --- une interface graphique avec Swing ou JavaFX pour elargir la possibilite d'utilisation
+
 --- des cibles plus complexes API REST Systeme avec Token
