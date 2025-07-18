@@ -29,3 +29,23 @@ le but est de comprendre le fonctionnement de ces attaques tout en appliquant un
 
 pour ce mini projet nous avons a la fois utilise Factory method et Abstract Factory.
 Le but du projet etant de permettre de choisir dynamiquement une strategie ainsi que le type de cible, il est plus judicieux d'utiliser Factory method et/ou Abstract Factory à la place d'un nombre incalculable de conditions (if....else)
+Abstract Factory centralise la logique de creation des objets (cracker et cible),permet d'ajouter de nouvelles combinaisons et rend le systeme plus lisible et evolutif
+
+en therme de structure nous avons :
+    -crackerFactory : interface abstraite c'est le coeur du design patterb pouvant produire une combinaison d'une   strategie d'attaque et d'une cible ce qui permet de separer la logique de creation
+
+    -LocalBruteForceFactory et OnlineBruteForceFactory : des fabrique concretes implementant crackerFactory chaque fabrique cree un objet cracker spécifique et une cibles specifique
+
+    -PasswordCracker et Target : interfaces pour l'attaque et la cible definissant le comportement d'une attaque avec BruteForceCracker qui genere toute les combinaisons possibles et DictionnaryCracker qui teste avec une liste de mot de passe provenant d'un fichier. Target est l'interface qui presente la cible a attaquer avec LocalTarget pour une cible en console et OnlineTarget pour une cible via HTTP
+
+
+
+        ---Variantes Implementées
+
+Brute Force   ---   local      ---   LocalBruteForceFactory   ---  Genere toutes les combinaisons,test local
+
+Dictionnaire  ---   local      ---   LocalDictionnaryFactory  ---  Charge un fichier texte et teste chaque mot
+
+Brute Force   ---   en ligne   ---   OnlineBruteForceFactory  ---  Envoie des requettes HTTP avec cheque combinaison
+
+Dictionnaire  ---   en ligne   ---   OnlineDictionnaryFactory ---  Envoie des requettes HTTP avec cheque mot du  -                                                                  fichier
