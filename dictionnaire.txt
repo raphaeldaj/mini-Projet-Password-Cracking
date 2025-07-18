@@ -1,0 +1,6 @@
+1234
+admin
+password
+azerty
+passer1234
+root
