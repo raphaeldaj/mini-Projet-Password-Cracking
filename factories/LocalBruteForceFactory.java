@@ -6,7 +6,7 @@ import targets.LocalTarget;
 import targets.Target;
 
 public class LocalBruteForceFactory implements CrackerFactory{
-    
+
     private String login;
 
     public LocalBruteForceFactory(String login){
@@ -18,7 +18,7 @@ public class LocalBruteForceFactory implements CrackerFactory{
     }
 
     public Target createTarget(){
-        return new LocalTarget(login, "passer1234");
+        return new LocalTarget(login, "pa12");
     }
      
 }

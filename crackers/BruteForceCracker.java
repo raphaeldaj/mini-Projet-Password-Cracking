@@ -5,7 +5,7 @@ import targets.Target;
 public class BruteForceCracker implements PasswordCracker {
 
     private final String alphabet = "abcdefghijklmnopqrstuvwxyz0123456789";
-    private final int LongueurMax = 4;
+    private final int LongueurMax = 10;
     private boolean found = false;
 
     public void crack(Target target){

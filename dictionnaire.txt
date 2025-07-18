@@ -2,5 +2,5 @@
 admin
 password
 azerty
-passer1234
+pa12
 root

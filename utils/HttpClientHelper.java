@@ -12,7 +12,7 @@ public class HttpClientHelper {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
-            String postData = "login=" + login + "&motDePasse" + motDePasse;
+            String postData = "login=" + login + "&motDePasse=" + motDePasse;
 
             try(OutputStream os = conn.getOutputStream()){
                 os.write(postData.getBytes());

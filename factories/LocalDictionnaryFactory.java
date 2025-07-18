@@ -18,6 +18,6 @@ public class LocalDictionnaryFactory implements CrackerFactory{
     }
 
     public Target createTarget(){
-        return new LocalTarget(login, "passer1234");
+        return new LocalTarget(login, "pa12");
     }
 }
