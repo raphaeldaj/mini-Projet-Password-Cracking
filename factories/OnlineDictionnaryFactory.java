@@ -5,7 +5,7 @@ import crackers.PasswordCracker;
 import targets.OnlineTarget;
 import targets.Target;
 
-public class OnlineDictionnaryFactory implements CrackerFactory {
+public class OnlineDictionnaryFactory implements PasswordCrackerFactory {
     private String login;
 
     public OnlineDictionnaryFactory(String login){

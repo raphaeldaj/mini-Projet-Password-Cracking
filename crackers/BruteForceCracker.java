@@ -6,8 +6,7 @@ public class BruteForceCracker implements PasswordCracker {
 
     private final String alphabet = "abcdefghijklmnopqrstuvwxyz0123456789";
     private final int LongueurMax = 10;
-    private boolean found = false;
-
+    private  boolean found = false;
     public void crack(Target target){
         System.out.println("Debut de l'attaque Brute Force");
         for(int longuer=1;longuer <= LongueurMax; longuer++){
@@ -25,6 +24,7 @@ public class BruteForceCracker implements PasswordCracker {
             if (target.attempt(current)) {
                 System.out.println("Mot de passe trouvé : " + current);
                 found = true;
+                return;
             }
             return;
         }
@@ -34,6 +34,7 @@ public class BruteForceCracker implements PasswordCracker {
             if (found) {
                 return;
             }
+
         }
 
     }

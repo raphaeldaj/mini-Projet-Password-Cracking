@@ -5,7 +5,7 @@ import crackers.PasswordCracker;
 import targets.OnlineTarget;
 import targets.Target;
 
-public class OnlineBruteForceFactory implements CrackerFactory {
+public class OnlineBruteForceFactory implements PasswordCrackerFactory {
     private String login;
 
     public OnlineBruteForceFactory(String login){

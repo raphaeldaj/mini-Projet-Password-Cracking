@@ -5,7 +5,7 @@ import crackers.PasswordCracker;
 import targets.LocalTarget;
 import targets.Target;
 
-public class LocalBruteForceFactory implements CrackerFactory{
+public class LocalBruteForceFactory implements PasswordCrackerFactory{
 
     private String login;
 
@@ -18,7 +18,6 @@ public class LocalBruteForceFactory implements CrackerFactory{
     }
 
     public Target createTarget(){
-        return new LocalTarget(login, "passer1234");
+        return new LocalTarget(login, "p");
     }
-     
 }

@@ -14,20 +14,12 @@ public class Main {
         String target = args[3];
         String login = args[5];
 
-        CrackerFactory factory = null;
-
-        if (type.equals("brute") && target.equals("local"))
-            factory = new LocalBruteForceFactory(login);
-        else if (type.equals("brute") && target.equals("online"))
-            factory = new OnlineBruteForceFactory(login);
-        else if (type.equals("dictionnary") && target.equals("local"))
-            factory = new LocalDictionnaryFactory(login);
-        else if (type.equals("dictionnary") && target.equals("online"))
-            factory = new OnlineDictionnaryFactory(login);
-        else {
-            System.out.println("Type ou cible non reconnue");
-            return;
+        PasswordCrackerFactory factory = CrackerFactory.getInstance(type, target, login);
+        if(factory == null){
+            System.err.println("Erreur lors de la creation de la factory.");
+            System.exit(-1);
         }
+        
 
         PasswordCracker cracker = factory.createCracker();
         Target cible = factory.createTarget();
