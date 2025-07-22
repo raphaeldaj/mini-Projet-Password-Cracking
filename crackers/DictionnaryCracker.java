@@ -8,9 +8,11 @@ public class DictionnaryCracker implements PasswordCracker {
     public void crack(Target target){
         System.out.println("Lancement d'une attaque Dictionnaire");
 
+        // Lecture du fichier dictionnaire ligne par ligne
         try (BufferedReader br = new BufferedReader(new FileReader("dictionnaire.txt"))){
             String ligne;
             while ((ligne = br.readLine()) != null) {
+                // Tentative avec chaque mot du dictionnaire 
                 if (target.attempt(ligne)) {
                     System.out.println("Mot de passe trouvé : " + ligne);
                     return;
