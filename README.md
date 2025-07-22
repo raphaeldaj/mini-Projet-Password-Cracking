@@ -31,6 +31,10 @@ pour ce mini projet nous avons a la fois utilise Factory method et Abstract Fact
 Le but du projet etant de permettre de choisir dynamiquement une strategie ainsi que le type de cible, il est plus judicieux d'utiliser Factory method et/ou Abstract Factory à la place d'un nombre incalculable de conditions (if....else)
 Abstract Factory centralise la logique de creation des objets (cracker et cible),permet d'ajouter de nouvelles combinaisons et rend le systeme plus lisible et evolutif
 
+
+        --- Structure
+
+        
 en therme de structure nous avons :
     -crackerFactory : interface abstraite c'est le coeur du design patterb definissant les methodes pour creer un objet passwordCracker un objet Target permettant ainsi la separation clair entre la creation des objet et leur utilisation
 
