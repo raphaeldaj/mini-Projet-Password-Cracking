@@ -21,8 +21,8 @@ le but est de comprendre le fonctionnement de ces attaques tout en appliquant un
 
 
         ---Architecture Logiciel
-
-----------------------------------------diagramme a ajouter lien lucidchart-----------------------------------------
+diagramme de classe
+https://lucid.app/lucidchart/f6f28926-4635-45df-b0c7-a765bd4c1d72/edit?viewport_loc=-2142%2C-704%2C3837%2C1824%2C0_0&invitationId=inv_8bcc9878-03d3-48a7-8fd2-9e0efc868018
 
 
         ---Design Pattern utilisé
@@ -32,12 +32,20 @@ Le but du projet etant de permettre de choisir dynamiquement une strategie ainsi
 Abstract Factory centralise la logique de creation des objets (cracker et cible),permet d'ajouter de nouvelles combinaisons et rend le systeme plus lisible et evolutif
 
 en therme de structure nous avons :
-    -crackerFactory : interface abstraite c'est le coeur du design patterb pouvant produire une combinaison d'une   strategie d'attaque et d'une cible ce qui permet de separer la logique de creation
+    -crackerFactory : interface abstraite c'est le coeur du design patterb definissant les methodes pour creer un objet passwordCracker un objet Target permettant ainsi la separation clair entre la creation des objet et leur utilisation
 
-    -LocalBruteForceFactory et OnlineBruteForceFactory : des fabrique concretes implementant crackerFactory chaque fabrique cree un objet cracker spécifique et une cibles specifique
+    -Les fabriques Concretes
+    Elles sont au nombre de quatres
 
-    -PasswordCracker et Target : interfaces pour l'attaque et la cible definissant le comportement d'une attaque avec BruteForceCracker qui genere toute les combinaisons possibles et DictionnaryCracker qui teste avec une liste de mot de passe provenant d'un fichier. Target est l'interface qui presente la cible a attaquer avec LocalTarget pour une cible en console et OnlineTarget pour une cible via HTTP
+---LocalBruteForceFactory    : combine BruteForceCracker avec LocalTarget
+---OnlineBruteForceFactory   : combine BruteForceCracker avec OnlineTarget
+---LocalDictionnaryFactory   : combine DictionnaryCracker avec LocalTarget
+---OnlineDictionnaryFactory  : combine DictionnaryCracker avec OnlineTarget
 
+    -Les interfaces fonctionnelles
+
+---PasswordCracker : defini le comportement des attaques
+---Target : defini le type de cible
 
 
         ---Variantes Implementées
